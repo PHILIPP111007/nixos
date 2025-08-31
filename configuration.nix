@@ -143,6 +143,9 @@
 	libgcc
 	python313
 	go
+	docker_28
+	neovim
+	amnezia-vpn
     ];
   };
 
@@ -167,6 +170,8 @@
   	wget
 	cudaPackages.cudatoolkit
   ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
