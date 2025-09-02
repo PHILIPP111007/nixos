@@ -176,6 +176,7 @@
     wofi
     dunst
     kdePackages.dolphin
+    hyprshot
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
