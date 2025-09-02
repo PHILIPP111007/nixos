@@ -9,7 +9,6 @@
     ./hardware-configuration.nix
     ./hyprland.nix
     ./nvidia.nix
-    ./fonts.nix
   ];
 
   # Bootloader.
