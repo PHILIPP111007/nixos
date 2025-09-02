@@ -157,6 +157,8 @@
       docker_28
       neovim
       amnezia-vpn
+      chromium
+      zoom-us
     ];
   };
 
@@ -200,12 +202,15 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    file
+    tree
+    unzip
+    gcc
 
     cudaPackages.cudatoolkit
 
     gnomeExtensions.blur-my-shell
-    gnomeExtensions.just-perfection
-    gnomeExtensions.arc-menu
+    nautilus
 
     zsh
     zsh-powerlevel10k
