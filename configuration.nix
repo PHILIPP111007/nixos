@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
     ./hyprland.nix
     ./nvidia.nix
+    ./fonts.nix
   ];
 
   # Bootloader.
@@ -53,7 +54,7 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome.enable = false;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -174,6 +175,7 @@
     waybar
     wofi
     dunst
+    dolphin
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
