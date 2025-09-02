@@ -53,10 +53,6 @@
   ];
 
   # Enaable OpenGL
-  #hardware.graphics = {
-  #  enable = true;
-  #};
-
   hardware.graphics = {
       enable = true;
   };
@@ -68,12 +64,27 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  # Hyprland
+  #programs.hyprland = {
+  #  enable = true;
+  #  withUWSM = true;
+  #  xwayland.enable = true;
+  #};
+
+  #environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  #environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
+
+  #programs.hyprlock.enable = true;
+  #services.hypridle.enable = true;
+  #programs.waybar.enable = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
 
+  # NVIDIA
   hardware.nvidia = {
     # Modesetting is required.
     modesetting.enable = true;
@@ -132,26 +143,47 @@
     description = "Phil";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-	htop
-	git
-	micromamba
-	vscode
-	lokinet
-	neofetch
-	fastfetch
-	glxinfo
-	libgcc
-	python313
-	go
-	docker_28
-	neovim
-	amnezia-vpn
+      htop
+      git
+      micromamba
+      vscode
+      lokinet
+      neofetch
+      fastfetch
+      glxinfo
+      libgcc
+      python313
+      go
+      docker_28
+      neovim
+      amnezia-vpn
     ];
   };
 
   # Install firefox.
   programs.firefox.enable = true;
 
+  # ZSH
+  programs.zsh = {
+    enable = true;
+    enableBashCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
+    # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+    ohMyZsh = {
+      enable = true;
+      plugins = [ "git" "history" ];
+      custom = "$HOME/.oh-my-zsh/custom/";
+      theme = "powerlevel10k/powerlevel10k";
+    };
+  };
+
+  system.userActivationScripts.zshrc = "touch .zshrc";
+  environment.shells = with pkgs; [ zsh ];
+  users.defaultUserShell = pkgs.zsh;
+
+  # GIT
   programs.git.config = {
     init.defaultBranch = "main";
     user = {
@@ -166,9 +198,30 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  	vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  	wget
-	cudaPackages.cudatoolkit
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+
+    cudaPackages.cudatoolkit
+
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.just-perfection
+    gnomeExtensions.arc-menu
+
+    zsh
+    zsh-powerlevel10k
+
+    # pyprland
+    # hyprpicker
+    # hyprcursor
+    # hyprlock
+    # hypridle
+    # hyprpaper
+    # hyprsunset
+    # hyprpolkitagent
+    # kitty
+    # waybar
+    # wofi
+    # dunst
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
