@@ -47,11 +47,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enaable OpenGL
-  hardware.graphics = {
-    enable = true;
-  };
-
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = false;
@@ -158,6 +153,7 @@
     kitty
     wezterm
     nix-btm
+    pciutils  # lspci
 
     cudaPackages.cudatoolkit
 
