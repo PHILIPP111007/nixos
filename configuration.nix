@@ -156,6 +156,8 @@
     gnutar
     gcc
     kitty
+    wezterm
+    nix-btm
 
     cudaPackages.cudatoolkit
 
@@ -179,6 +181,8 @@
     dunst
     kdePackages.dolphin
     hyprshot
+    fish
+    wlogout
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

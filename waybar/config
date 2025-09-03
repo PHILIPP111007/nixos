@@ -48,9 +48,9 @@
     },
 
     "clock#time": {
-        "format": "{:%I:%M %p %Ez}",
-        // "locale": "en_US.UTF-8",
-        // "timezones": [ "Europe/Kyiv", "America/New_York" ],
+        "format": "{:%H:%M:%S}",
+        "locale": "en_US.UTF-8",
+        "timezones": [ "Europe/Msocow" ],
     },
 
     "custom/separator": {
@@ -94,11 +94,10 @@
     },
 
     "clock": {
-        "format": "{:%I:%M %p %Ez | %a • %h | %F}",
-        "format-alt": "{:%I:%M %p}",
+        "format": "{:%H:%M:%S | %a • %h | %F}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        // "locale": "en_US.UTF-8",
-        // "timezones": [ "Europe/Kyiv", "America/New_York" ],
+        "locale": "en_US.UTF-8",
+        "timezones": [ "Europe/Moscow" ],
         "actions": {
             "on-click-right": "mode",
         },
@@ -154,7 +153,7 @@
 
     "network": {
         "format": "󰤭",
-        "format-wifi": "{icon}({signalStrength}%){essid}",
+        "format-wifi": "{icon} ({signalStrength}%) {essid}",
         "format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ],
         "format-disconnected": "󰤫 Disconnected",
         "tooltip-format": "wifi <span color='#ee99a0'>off</span>",
@@ -227,11 +226,10 @@
     "custom/night_mode": {
         "return-type": "json",
         "restart-interval": 1,
-        "on-scroll-down": "fish -c night_mode_temp_up",
-        "on-scroll-up": "fish -c night_mode_temp_down",
         "smooth-scrolling-threshold": 2.0,
         "exec": "fish -c check_night_mode",
-        "on-click": "fish -c night_mode_toggle",
+        "on-click": "fish -c night_mode_temp_up",
+        "on-click-right": "fish -c night_mode_temp_down",
     },
     
     "custom/dunst": {
@@ -256,7 +254,7 @@
         "return-type": "json",
         "exec": "echo '{ \"text\":\"󰐥\", \"tooltip\": \"logout menu\" }'",
         "interval": "once",
-        "on-click": "fish -c wlogout_uniqe",
+        "on-click": "fish -c wlogout_unique",
     },
  
 },
@@ -276,13 +274,12 @@
 
     // Modules Config
     "hyprland/window": {
-        "format": "👼 {title} 😈",
+        "format": "{title}",
         "max-length": 50,
     },
 
     "hyprland/language": {
         "format-en": "🇺🇸 ENG (US)",
-        "format-uk": "🇺🇦 UKR",
         "format-ru": "🇷🇺 RUS",
         "keyboard-name": "at-translated-set-2-keyboard",
         "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
@@ -344,8 +341,8 @@
             "lower-medium": 30,
             "low": 10,
         },
-        "on-click": "wezterm start btop",
-        "on-click-right": "wezterm start btm",
+        "on-click": "wezterm start htop",
+        "on-click-right": "wezterm start nix-btm",
     },
     
     "memory": {
@@ -358,8 +355,8 @@
             "lower-medium": 30,
             "low": 10,
         },
-        "on-click": "wezterm start btop",
-        "on-click-right": "wezterm start btm",
+        "on-click": "wezterm start htop",
+        "on-click-right": "wezterm start nix-btm",
     },
 
     "disk": {
@@ -372,8 +369,8 @@
             "lower-medium": 30,
             "low": 10,
         },
-        "on-click": "wezterm start btop",
-        "on-click-right": "wezterm start btm",
+        "on-click": "wezterm start htop",
+        "on-click-right": "wezterm start nix-btm",
     },
 
     "temperature": {
