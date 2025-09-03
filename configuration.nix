@@ -10,6 +10,11 @@
     ./hyprland.nix
     ./nvidia.nix
     ./fonts.nix
+    ./swap.nix
+    ./theme.nix
+    ./vpn.nix
+    ./users.nix
+    ./lokinet.nix
   ];
 
   # Bootloader.
@@ -79,29 +84,9 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.phil = {
-    isNormalUser = true;
-    description = "Phil";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      micromamba
-      vscode
-      lokinet
-      fastfetch
-      glxinfo
-      libgcc
-      python313
-      go
-      docker_28
-      amnezia-vpn
-      chromium
-      zoom-us
-    ];
-  };
-
   programs = {
     firefox.enable = true;
+    fish.enable = true;
 
     zsh = {
       enable = true;
@@ -154,6 +139,7 @@
     wezterm
     nix-btm
     pciutils  # lspci
+    usbutils
 
     cudaPackages.cudatoolkit
 
@@ -180,6 +166,7 @@
     fish
     wlogout
     pavucontrol
+    figlet
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
