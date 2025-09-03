@@ -223,13 +223,23 @@
         "on-click": "fish -c airplane_mode_toggle",
     },
 
+    // "custom/night_mode": {
+    //     "return-type": "json",
+    //     "restart-interval": 1,
+    //     "smooth-scrolling-threshold": 2.0,
+    //     "exec": "fish -c check_night_mode",
+    //     "on-click": "fish -c night_mode_temp_up",
+    //     "on-click-right": "fish -c night_mode_temp_down",
+    // },
     "custom/night_mode": {
         "return-type": "json",
         "restart-interval": 1,
+        "on-scroll-down": "fish -c night_mode_temp_up",
+        "on-scroll-up": "fish -c night_mode_temp_down",
         "smooth-scrolling-threshold": 2.0,
         "exec": "fish -c check_night_mode",
-        "on-click": "fish -c night_mode_temp_up",
-        "on-click-right": "fish -c night_mode_temp_down",
+        "on-click": "fish -c night_mode_toggle",
+        "on-click-right": "fish -c night_mode_temp_up",
     },
     
     "custom/dunst": {
@@ -308,7 +318,7 @@
     "name": "left_bar",
     "layer": "top", // Waybar at top layer
     "position": "left", // Waybar position (top|bottom|left|right)
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 20, // Gaps between modules (4px)
     "width": 75,
     "margin-top": 10,
     "margin-bottom": 10,

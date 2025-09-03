@@ -179,6 +179,7 @@
     hyprshot
     fish
     wlogout
+    pavucontrol
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
