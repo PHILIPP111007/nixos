@@ -90,19 +90,15 @@
     description = "Phil";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      htop
-      git
       micromamba
       vscode
       lokinet
-      neofetch
       fastfetch
       glxinfo
       libgcc
       python313
       go
       docker_28
-      neovim
       amnezia-vpn
       chromium
       zoom-us
@@ -146,7 +142,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
+    neovim
+    nano
+    git
+    htop
+    btop
     wget
     file
     tree
@@ -154,6 +155,7 @@
     unzip
     gnutar
     gcc
+    kitty
 
     cudaPackages.cudatoolkit
 
@@ -172,7 +174,6 @@
     hyprpaper
     hyprsunset
     hyprpolkitagent
-    kitty
     waybar
     wofi
     dunst
