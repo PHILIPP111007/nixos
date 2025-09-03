@@ -16,6 +16,7 @@
     ./users.nix
     ./lokinet.nix
     ./gnome.nix
+    ./bluetooth.nix
   ];
 
   # Bootloader.
@@ -167,6 +168,7 @@
     wlogout
     pavucontrol
     figlet
+    brightnessctl
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
