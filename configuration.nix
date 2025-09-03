@@ -152,6 +152,7 @@
     tree
     zip
     unzip
+    gnutar
     gcc
 
     cudaPackages.cudatoolkit
