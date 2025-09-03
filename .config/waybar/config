@@ -264,9 +264,15 @@
         "return-type": "json",
         "exec": "echo '{ \"text\":\"󰐥\", \"tooltip\": \"logout menu\" }'",
         "interval": "once",
-        "on-click": "fish -c wlogout_unique",
+        // "on-click": "fish -c wlogout_unique",
+        "on-click": "wlogout",
     },
- 
+
+    "custom/logout": {
+        "format": "", // Пример иконки из FontAwesome
+        "tooltip": "Меню выхода",
+        "on-click": "wlogout --logout" // Или любая другая команда для вызова wlogout
+    } 
 },
 
 
