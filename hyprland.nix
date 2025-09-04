@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   # Hyprland
   programs.hyprland = {
@@ -11,4 +13,34 @@
 
   programs.hyprlock.enable = false;
   services.hypridle.enable = false;
+
+  environment.systemPackages = with pkgs; [
+    hyprland
+    pyprland
+    hyprpicker
+    hyprcursor
+    hyprlock
+    hypridle
+    hyprpaper
+    hyprsunset
+    hyprpolkitagent
+    waybar
+    wofi
+    dunst
+    kdePackages.dolphin
+    kdePackages.qtsvg
+    fish
+    wlogout
+    pavucontrol
+    figlet
+    brightnessctl
+    starship
+    helix
+    qutebrowser
+    zathura
+    mpv
+    imv
+    rofi-wayland
+    grimblast
+  ];
 }

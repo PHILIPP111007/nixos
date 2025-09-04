@@ -81,7 +81,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   programs = {
     firefox.enable = true;
@@ -143,39 +143,10 @@
     cudaPackages.cudatoolkit
     tlp
 
-    gnomeExtensions.blur-my-shell
     nautilus
 
     zsh
     zsh-powerlevel10k
-
-    hyprland
-    pyprland
-    hyprpicker
-    hyprcursor
-    hyprlock
-    hypridle
-    hyprpaper
-    hyprsunset
-    hyprpolkitagent
-    waybar
-    wofi
-    dunst
-    kdePackages.dolphin
-    kdePackages.qtsvg
-    hyprshot
-    fish
-    wlogout
-    pavucontrol
-    figlet
-    brightnessctl
-    starship
-    helix
-    qutebrowser
-    zathura
-    mpv
-    imv
-    rofi-wayland
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
