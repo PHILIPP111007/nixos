@@ -18,6 +18,7 @@
     ./gnome.nix
     ./bluetooth.nix
     ./bootloader.nix
+    ./tlp.nix
   ];
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -140,6 +141,7 @@
     usbutils
 
     cudaPackages.cudatoolkit
+    tlp
 
     gnomeExtensions.blur-my-shell
     nautilus
@@ -160,6 +162,7 @@
     wofi
     dunst
     kdePackages.dolphin
+    kdePackages.qtsvg
     hyprshot
     fish
     wlogout
