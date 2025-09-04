@@ -169,7 +169,6 @@
     pavucontrol
     figlet
     brightnessctl
-    cool-retro-term
     starship
     helix
     qutebrowser
