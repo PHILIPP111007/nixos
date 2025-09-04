@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, options, ... }:
 
 {
   # Enable Theme
@@ -48,5 +48,6 @@
     catppuccin-gtk
     catppuccin-kvantum
     catppuccin-cursors.macchiatoTeal
+    catppuccin
   ];
 }

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -17,11 +17,8 @@
     ./lokinet.nix
     ./gnome.nix
     ./bluetooth.nix
+    ./bootloader.nix
   ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -169,6 +166,14 @@
     pavucontrol
     figlet
     brightnessctl
+    cool-retro-term
+    starship
+    helix
+    qutebrowser
+    zathura
+    mpv
+    imv
+    rofi-wayland
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
