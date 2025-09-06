@@ -5,7 +5,7 @@
   users.users.phil = {
     isNormalUser = true;
     description = "Phil";
-    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" ];
+    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       micromamba
@@ -16,7 +16,6 @@
       libgcc
       python313
       go
-      docker_28
       amnezia-vpn
       chromium
       zoom-us

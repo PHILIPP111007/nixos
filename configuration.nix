@@ -100,6 +100,16 @@
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
 
+  # Docker
+  systemd.services = {
+    docker = {
+      enable = true;
+    };
+  };
+
+  # Enable docker daemon
+  virtualisation.docker.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -124,6 +134,8 @@
     nix-btm
     pciutils  # lspci
     usbutils
+    docker
+    docker-compose
 
     cudaPackages.cudatoolkit
     tlp
